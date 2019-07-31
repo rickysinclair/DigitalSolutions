@@ -23,3 +23,6 @@ cur.execute("SELECT {0} {1} FROM Country".format(para1, para2))
 # display all results
 for rows in cur.fetchall():
     print(rows)
+
+# close connection
+conn.close()

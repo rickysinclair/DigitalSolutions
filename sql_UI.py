@@ -1,4 +1,5 @@
 import sqlite3
+
 from guizero import App, TextBox, PushButton
 
 # select database
@@ -9,6 +10,7 @@ conn = sqlite3.connect(database)
 
 # create cursor
 cur = conn.cursor()
+
 
 def query():
     """
@@ -26,6 +28,7 @@ def query():
     for rows in cur.fetchall():
         text.append(rows)
 
+
 # create App
 app = App()
 
@@ -41,3 +44,6 @@ text = TextBox(app, width=300, height=300, multiline=True, scrollbar=True)
 
 # display app window
 app.display()
+
+# close connection
+conn.close()
