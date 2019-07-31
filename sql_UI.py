@@ -24,10 +24,12 @@ def query():
     # execute query using positional arguments
     cur.execute("SELECT {0} {1} FROM Country".format(f0, f1))
 
+    # clear text box
+    text.value = ""
+
     # fetch all results and append to text box
     for rows in cur.fetchall():
         text.append(rows)
-
 
 # create App
 app = App()
