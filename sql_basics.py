@@ -17,7 +17,7 @@ conn.execute('''CREATE TABLE CUSTOMERS
             DOB DATE NOT NULL);''')
 
 # create command with tuples
-myTuple = """INSERT INTO CUSTOMERS (id, name, age, DOB) VALUES (?,?,?,?)""";
+myTuple = '''INSERT INTO CUSTOMERS (id, name, age, DOB) VALUES (?,?,?,?);'''
 
 # create list of values
 records_to_insert = [[2, 'Jon', 27, '2018-01-11'],
@@ -30,14 +30,17 @@ records_to_insert = [[2, 'Jon', 27, '2018-01-11'],
 conn.executemany(myTuple, records_to_insert)
 
 # query database
-record = conn.execute("SELECT id, name, age, DOB FROM CUSTOMERS")
+record = conn.execute('SELECT id, name, age, DOB FROM CUSTOMERS')
 
 # print results of query with formatting
 for row in record:
-    print("ID = ", row[0])
-    print("NAME = ", row[1])
-    print("AGE = ", row[2])
-    print("DOB = ", row[3], '\n')
+    print('ID = ', row[0])
+    print('NAME = ', row[1])
+    print('AGE = ', row[2])
+    print('DOB = ', row[3], '\n')
+
+# commit changes to db
+conn.commit()
 
 # close connection
 conn.close()
