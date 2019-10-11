@@ -19,7 +19,7 @@ conn.execute('''CREATE TABLE CUSTOMERS
 # create command with tuples
 myTuple = '''INSERT INTO CUSTOMERS (id, name, age, DOB) VALUES (?,?,?,?);'''
 
-# create list of values
+# create list of valuessql_basics.py
 records_to_insert = [[2, 'Jon', 27, '2018-01-11'],
                      [3, 'Jane', 28, '2017-12-11'],
                      [4, 'Bill', 35, '2018-03-23'],
